@@ -1,0 +1,67 @@
+.header {
+  height: 550px;
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 1)
+    ),
+    url("../../../images/bg.jpg");
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+.header .h1,
+.h2 {
+  color: transparent;
+  display: block;
+  position: relative;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+.header .h1 {
+  font-size: 5rem;
+  animation-delay: 1s;
+}
+.header .h2 {
+  font-size: 4rem;
+  animation-delay: 2s;
+}
+
+.header .span {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  position: absolute;
+  background: crimson;
+  animation: overlays 1s ease forwards;
+  animation-delay: 0.5s;
+}
+.header .h1 .span {
+  animation-delay: 0.5s;
+}
+.header .h2 .span {
+  animation-delay: 1.5s;
+}
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+@keyframes text_reveal_name {
+  100% {
+    color: crimson;
+  }
+}
+@keyframes overlays {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
