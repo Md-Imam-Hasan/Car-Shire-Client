@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 
 html {
   box-sizing: border-box;
@@ -26,4 +26,14 @@ body {
   background-color: #eeeeee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} */
+
+body {
+  overflow-x: hidden;
+}
+section {
+  margin: 90px 0;
+}
+.brand-color {
+  color: #fb4848;
 }

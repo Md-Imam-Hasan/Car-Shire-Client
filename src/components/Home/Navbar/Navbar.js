@@ -6,6 +6,7 @@ import logo from '../../../images/logo.png';
 
 const NavBar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  console.log(loggedInUser);
   return (
     <div className='Navbar'>
       <nav className="navbar navbar-expand-md navbar-dark">
@@ -22,18 +23,15 @@ const NavBar = () => {
                 <Link className="nav-link" to="/home"><b>Home</b></Link>
               </li>
               <li className="nav-item me-5">
-                <Link className="nav-link" to="/orders"><b>Orders</b></Link>
-              </li>
-              <li className="nav-item me-5">
-                <Link className="nav-link" to="/admin"><b>Admin</b></Link>
+                <Link className="nav-link" to="/dashboard"><b>Dashboard</b></Link>
               </li>
               <li className="nav-item me-5">
                 <Link className="nav-link" to=""><b>Deals</b></Link>
               </li>
             </ul>
-            {!loggedInUser.success ? <Link to='/login'>
+            {!loggedInUser?.success ? <Link to='/login'>
               <button className='btn btn-outline-danger ms-5'>Login</button>
-            </Link> : <img src={loggedInUser.photoURL} className='image ms-5' alt=''></img>}
+            </Link> : <p className="mt-3 text-danger text-uppercase"><b>{loggedInUser.userName}</b></p>}
           </div>
         </div>
       </nav>

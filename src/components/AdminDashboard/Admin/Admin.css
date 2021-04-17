@@ -1,0 +1,21 @@
+.admin {
+  height: 100vh;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  /* color: white; */
+}
+.admin-option {
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+.active {
+  color: white;
+  background-color: crimson;
+}
+.admin-option:hover {
+  color: white;
+  background-color: crimson;
+}

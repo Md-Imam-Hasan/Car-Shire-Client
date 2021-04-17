@@ -1,4 +1,5 @@
 .header {
+  margin-bottom: 60px;
   height: 550px;
   background: linear-gradient(
       to left,
@@ -20,11 +21,11 @@
   animation-delay: 1s;
 }
 .header .h1 {
-  font-size: 5rem;
+  font-size: 50px;
   animation-delay: 1s;
 }
 .header .h2 {
-  font-size: 4rem;
+  font-size: 40px;
   animation-delay: 2s;
 }
 
@@ -34,7 +35,7 @@
   height: 100%;
   width: 0;
   position: absolute;
-  background: crimson;
+  background: #fb4848;
   animation: overlays 1s ease forwards;
   animation-delay: 0.5s;
 }
@@ -51,7 +52,7 @@
 }
 @keyframes text_reveal_name {
   100% {
-    color: crimson;
+    color: #fb4848;
   }
 }
 @keyframes overlays {

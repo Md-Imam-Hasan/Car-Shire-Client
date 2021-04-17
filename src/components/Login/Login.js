@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import './Login.css';
-import GoogleIcon from '../../images/icons/Group 573.png'
+import GoogleIcon from '../../images/googleicon.png'
 import { handleGoogleSignIn, initializeFirebase } from './LoginManager';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
+import logo from '../../images/logo.png'
 
 initializeFirebase();
 
@@ -23,9 +24,13 @@ const Login = () => {
   }
 
   return (
-    <div className='login d-flex justify-content-center mt-5'>
-      <div className='text-center mt-5 card p-5'>
-        <button className='btn btn-block btn-customise d-flex justify-content-center align-items-center' onClick={googleSignIn}> <img src={GoogleIcon} alt="" /> Continue with Google </button>
+    <div className='login d-flex justify-content-center mt-5 pt-5'>
+      <div className='text-center card p-5'>
+        <div className="d-flex justify-content-center my-4">
+          <img src={logo} alt="" className="login-logo " />
+        </div>
+        <h2 className='my-4'>Login With</h2>
+        <button className='btn btn-block btn-customise d-flex justify-content-center align-items-center mb-4 mx-4' onClick={googleSignIn}> <img src={GoogleIcon} alt="" /> Continue with Google </button>
       </div>
     </div>
   );
