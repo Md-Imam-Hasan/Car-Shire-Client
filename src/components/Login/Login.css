@@ -1,6 +1,6 @@
 .login {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   height: 100vh;
 }
 .login-card {

@@ -11,8 +11,9 @@ const NavBar = () => {
     <div className='Navbar'>
       <nav className="navbar navbar-expand-md navbar-dark">
         <div className='container'>
-          <Link className="navbar-brand" to="/">
-            <img src={logo} alt="" className="img-fluid logo" />
+          <Link className="navbar-brand text-center" to="/">
+            <h3 className='m-0 brand-color website-name'>CARSHIRE</h3>
+            <small className='business'>CAR REPAIR SERVICE</small>
           </Link>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
             <span className="navbar-toggler-icon"></span>

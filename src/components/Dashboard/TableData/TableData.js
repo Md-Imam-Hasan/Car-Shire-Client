@@ -23,7 +23,6 @@ const TableData = ({ order }) => {
       <td>{order.userName}</td>
       <td>{order.email}</td>
       <td>{order.serviceTitle}</td>
-      <td>{order.payWith}</td>
       <td>
         <select onChange={handleChange} className="form-select" aria-label="Default select example">
           <option selected value="Pending">{order.status}</option>

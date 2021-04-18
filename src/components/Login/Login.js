@@ -5,6 +5,7 @@ import { handleGoogleSignIn, initializeFirebase } from './LoginManager';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 import logo from '../../images/logo.png'
+import { Link } from 'react-router-dom';
 
 initializeFirebase();
 
@@ -28,7 +29,10 @@ const Login = () => {
       <div className='d-flex justify-content-center '>
         <div className='text-center login-card card p-5'>
           <div className="d-flex justify-content-center my-4">
-            <img src={logo} alt="" className="login-logo " />
+            <Link className="navbar-brand text-center" to="/">
+              <h3 className='m-0 brand-color website-name'>CARSHIRE</h3>
+              <small className='business text-dark'>CAR REPAIR SERVICE</small>
+            </Link>
           </div>
           <h2 className='my-4'>Login With</h2>
           <button className='btn btn-block btn-customise d-flex justify-content-center align-items-center mb-4 mx-4' onClick={googleSignIn}> <img src={GoogleIcon} alt="" /> Continue with Google </button>

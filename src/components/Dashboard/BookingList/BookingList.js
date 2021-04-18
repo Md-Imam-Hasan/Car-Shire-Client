@@ -16,8 +16,8 @@ const BookingList = () => {
     <div className="mt-5">
       <div className="d-flex justify-content-center">
         {
-          !bookingList.length && <div class="spinner-border text-center text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+          !bookingList.length && <div >
+            <h2>You have not order any of our service</h2>
           </div>
         }
       </div>

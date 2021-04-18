@@ -20,7 +20,6 @@ const OrderList = () => {
               <th>Name</th>
               <th>Email ID</th>
               <th>Service</th>
-              <th>Pay With</th>
               <th>Status</th>
             </tr>
           </thead>
