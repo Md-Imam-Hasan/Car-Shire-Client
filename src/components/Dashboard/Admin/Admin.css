@@ -1,6 +1,9 @@
 .admin {
   height: 100vh;
 }
+.dark-bg {
+  background-color: #2a323a;
+}
 .icon {
   width: 20px;
   height: 20px;

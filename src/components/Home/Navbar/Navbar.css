@@ -1,3 +1,10 @@
 .logo {
   height: 50px;
 }
+.Navbar {
+  background-color: #2a323a;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: 100;
+}

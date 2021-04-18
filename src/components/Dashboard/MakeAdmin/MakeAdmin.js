@@ -3,28 +3,19 @@ import { useForm } from 'react-hook-form';
 
 const MakeAdmin = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => {
-    console.log(data);
-    // let newBook = {...addBook}
-    // const newService = {
-    //   serviceTitle: data.serviceTitle,
-    //   description: data.description,
-    //   price: data.price,
-    //   imageURL: imageURL
-    // }
-    // console.log(newService);
-    // const url = `http://localhost:5000/addService`;
-    // fetch(url, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(newService)
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     data && alert("New Service's Information Added Successfully")
-    //   })
+  const onSubmit = email => {
+    const url = `https://obscure-coast-14600.herokuapp.com/addAdmin`;
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(email)
+    })
+      .then(res => res.json())
+      .then(data => {
+        data && alert("New Admin Added Successfully")
+      })
   };
   return (
     <div>

@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import uploadIcon from '../../../images/cloud-upload-outline 1.png';
+
 const AddServices = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [imageURL, setImageURL] = useState(null)
 
   const onSubmit = data => {
-    // let newBook = {...addBook}
     const newService = {
       serviceTitle: data.serviceTitle,
       description: data.description,
@@ -15,7 +15,7 @@ const AddServices = () => {
       imageURL: imageURL
     }
     console.log(newService);
-    const url = `http://localhost:5000/addService`;
+    const url = `https://obscure-coast-14600.herokuapp.com/addService`;
     fetch(url, {
       method: 'POST',
       headers: {
@@ -44,7 +44,6 @@ const AddServices = () => {
   }
   return (
     <div>
-      <h4 className='m-4'>Add Service</h4>
       <div className="m-4 pt-4">
         <form className="mx-5 pe-3" onSubmit={handleSubmit(onSubmit)}>
           <div className="row g-4">

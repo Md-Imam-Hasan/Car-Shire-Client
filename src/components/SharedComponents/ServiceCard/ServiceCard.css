@@ -14,11 +14,31 @@
   color: white;
   font-size: 30px;
 }
+.service-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+}
+.color-Pending {
+  color: #fb4848;
+  background-color: rgba(251, 72, 72, 0.26);
+}
+.color-Ongoing {
+  color: cyan;
+  background-color: rgba(0, 255, 255, 0.26);
+}
+.color-Done {
+  color: green;
+  background-color: rgba(0, 128, 0, 0.26);
+}
 .black-div,
 .color-div,
 .white-div {
   width: 10px;
-  height: 24px;
+  height: 21px;
   margin-right: 5px;
   transform: skewX(-35deg);
   background-color: #2a323a;

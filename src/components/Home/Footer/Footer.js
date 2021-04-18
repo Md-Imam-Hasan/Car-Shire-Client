@@ -53,13 +53,13 @@ const Footer = () => {
               <h4>QUICK CONTACT</h4>
             </div>
             <form>
-              <div class="mb-3">
+              <div className="mb-3">
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your Name" />
               </div>
-              <div class="mb-3">
+              <div className="mb-3">
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
               </div>
-              <div class="mb-3">
+              <div className="mb-3">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Your Message'></textarea>
               </div>
               <div className="d-flex justify-content-end">

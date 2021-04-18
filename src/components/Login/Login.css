@@ -1,11 +1,14 @@
+.login {
+  position: relative;
+}
 .btn-customise {
   border-radius: 30px;
-  border: 1px solid #dc3545;
+  border: 1px solid #fb4848;
   height: 50px;
   width: 400px;
 }
 .btn-customise:hover {
-  border: 2px solid #dc3545;
+  border: 2px solid #fb4848;
 }
 .btn-customise img {
   margin: 0 8px;
@@ -13,4 +16,23 @@
 }
 .login-logo {
   width: 17rem;
+}
+.bg-line-color-1,
+.bg-line-color-2,
+.bg-line-black {
+  top: -5%;
+  left: -10%;
+  position: absolute;
+  height: 55px;
+  width: 170%;
+  background-color: #fb4848;
+  transform: rotate(-25deg);
+  z-index: -5;
+}
+.bg-line-color-2 {
+  top: 30%;
+}
+.bg-line-black {
+  top: 13%;
+  background-color: #2a323a;
 }

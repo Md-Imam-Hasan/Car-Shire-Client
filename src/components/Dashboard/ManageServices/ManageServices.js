@@ -4,14 +4,14 @@ const ManageServices = () => {
   const [serviceList, setServiceList] = useState([])
   useEffect(() => {
     setServiceList([]);
-    const url = 'http://localhost:5000/allService'
+    const url = 'https://obscure-coast-14600.herokuapp.com/allService'
     fetch(url)
       .then(res => res.json())
       .then(data => setServiceList(data))
   }, [])
 
   function deleteService(id) {
-    const url = `http://localhost:5000/delete/${id}`;
+    const url = `https://obscure-coast-14600.herokuapp.com/delete/${id}`;
     fetch(url, {
       method: "delete"
     })

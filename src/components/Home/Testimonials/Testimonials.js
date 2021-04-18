@@ -1,29 +1,16 @@
-import React from 'react';
-import person1 from '../../../images/person1.jpg';
+import React, { useEffect, useState } from 'react';
 import TestimonialCard from '../TestimonialCard/TestimonialCard';
 import './Testimonials.css'
-const feedbacks = [
-  {
-    name: "John Doe",
-    image: person1,
-    discription: "We know that sometimes it’s difficult to get to the phone if you are in the middle of something and you don’t want to miss.",
-    rate: 5
-  },
-  {
-    name: "John Doe",
-    image: person1,
-    discription: "We know that sometimes it’s difficult to get to the phone if you are in the middle of something and you don’t want to miss.",
-    rate: 5
-  },
-  {
-    name: "John Doe",
-    image: person1,
-    discription: "We know that sometimes it’s difficult to get to the phone if you are in the middle of something and you don’t want to miss.",
-    rate: 5
-  }
-]
 
 const Testimonials = () => {
+  const [feedbacks, setFeedbacks] = useState([])
+
+  useEffect(() => {
+    const url = `https://obscure-coast-14600.herokuapp.com/allReview`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setFeedbacks(data))
+  }, [])
   return (
     <section className='testimonial'>
       <div className="container">

@@ -24,13 +24,20 @@ const Login = () => {
   }
 
   return (
-    <div className='login d-flex justify-content-center mt-5 pt-5'>
-      <div className='text-center card p-5'>
-        <div className="d-flex justify-content-center my-4">
-          <img src={logo} alt="" className="login-logo " />
+    <div className="login">
+      <div className='d-flex justify-content-center mt-5 pt-5'>
+        <div className='text-center card p-5'>
+          <div className="d-flex justify-content-center my-4">
+            <img src={logo} alt="" className="login-logo " />
+          </div>
+          <h2 className='my-4'>Login With</h2>
+          <button className='btn btn-block btn-customise d-flex justify-content-center align-items-center mb-4 mx-4' onClick={googleSignIn}> <img src={GoogleIcon} alt="" /> Continue with Google </button>
         </div>
-        <h2 className='my-4'>Login With</h2>
-        <button className='btn btn-block btn-customise d-flex justify-content-center align-items-center mb-4 mx-4' onClick={googleSignIn}> <img src={GoogleIcon} alt="" /> Continue with Google </button>
+      </div>
+      <div className="bg-lines">
+        <div className="bg-line-color-1"></div>
+        <div className="bg-line-black"></div>
+        <div className="bg-line-color-2"></div>
       </div>
     </div>
   );

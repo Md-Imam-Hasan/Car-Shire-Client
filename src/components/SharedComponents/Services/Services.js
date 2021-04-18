@@ -5,7 +5,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    const url = 'http://localhost:5000/allService';
+    const url = 'https://obscure-coast-14600.herokuapp.com/allService';
     fetch(url)
       .then(res => res.json())
       .then(data => setServices(data));

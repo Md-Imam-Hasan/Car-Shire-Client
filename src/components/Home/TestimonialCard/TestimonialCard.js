@@ -4,8 +4,9 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import './TestimonialCard.css'
 const showRating = (rate) => {
   const stars = [];
+  const int = parseInt(rate, 10)
 
-  for (let i = 1; i <= rate; i++) {
+  for (let i = 1; i <= int; i++) {
     stars.push(<FontAwesomeIcon className='rating-icon' icon={faStar} />)
   }
   console.log(stars);
