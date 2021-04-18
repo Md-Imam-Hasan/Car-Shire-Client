@@ -9,7 +9,6 @@ import {
   faShoppingCart,
   faCommentAlt
 } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../../images/logo.png';
 import { UserContext } from '../../../App';
 
 const Sidebar = () => {
@@ -22,9 +21,6 @@ const Sidebar = () => {
   }, [loggedInUser])
   return (
     <div className='side-bar'>
-      {/* <Link className="d-flex justify-content-center" to="/">
-        <img src={logo} alt="" className="img-fluid logo my-3" />
-      </Link> */}
       <Link className="navbar-brand text-center" to="/">
         <div className="my-3">
           <h3 className='m-0 brand-color website-name'>CARSHIRE</h3>

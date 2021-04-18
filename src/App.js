@@ -3,8 +3,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import HomePage from './components/Home/HomePage/HomePage';
 import Login from './components/Login/Login';

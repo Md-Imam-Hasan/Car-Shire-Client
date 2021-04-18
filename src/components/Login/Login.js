@@ -4,7 +4,6 @@ import GoogleIcon from '../../images/googleicon.png'
 import { handleGoogleSignIn, initializeFirebase } from './LoginManager';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
-import logo from '../../images/logo.png'
 import { Link } from 'react-router-dom';
 
 initializeFirebase();

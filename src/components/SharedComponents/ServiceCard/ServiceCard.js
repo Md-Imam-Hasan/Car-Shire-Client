@@ -15,11 +15,7 @@ const ServiceCard = ({ service }) => {
     fetch('https://obscure-coast-14600.herokuapp.com/admin?email=' + loggedInUser.email)
       .then(res => res.json())
       .then(data => {
-        if (data) {
-          setRedirectLocation('/dashboard/manage-services')
-        } else {
-          setRedirectLocation(`/dashboard/place-order/${_id}`)
-        }
+        data ? setRedirectLocation('/dashboard/manage-services') : setRedirectLocation(`/dashboard/place-order/${_id}`)
       });
   }, [loggedInUser.email])
 
