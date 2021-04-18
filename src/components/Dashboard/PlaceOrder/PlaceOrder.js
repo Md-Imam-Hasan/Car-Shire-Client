@@ -54,12 +54,15 @@ const PlaceOrder = () => {
         <input type="email" className='form-control' defaultValue={loggedInUser.email} placeholder='Enter Email' />
       </div>
       <div className="col-sm-6  my-4 col-12">
-        <input type="text" className='form-control' defaultValue={service.serviceTitle} placeholder='Service' />
+        <input type="text" className='form-control' defaultValue={service.serviceTitle} placeholder='Select a service from our exciting services' />
       </div>
       <div className="col-sm-6  my-4 col-12">
         <Elements stripe={stripePromise}>
           <SimpleCardForm handlePayment={handlePayment}></SimpleCardForm>
         </Elements>
+        {
+          service.price ? <p className='mt-3'>Your service charge will be ${service.price}</p> : null
+        }
       </div>
 
 

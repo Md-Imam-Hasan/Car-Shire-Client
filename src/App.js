@@ -9,8 +9,8 @@ import {
 import HomePage from './components/Home/HomePage/HomePage';
 import Login from './components/Login/Login';
 import NavBar from './components/Home/Navbar/Navbar';
-import Admin from './components/Dashboard/Admin/Admin';
 import PrivateRoute from './components/Login/PrivateRoute';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 export const UserContext = createContext();
 
@@ -30,7 +30,7 @@ function App() {
             <Login />
           </Route>
           <PrivateRoute path='/dashboard'>
-            <Admin />
+            <Dashboard />
           </PrivateRoute>
           <Route exact path="/">
             <HomePage />

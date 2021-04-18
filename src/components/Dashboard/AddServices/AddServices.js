@@ -71,7 +71,7 @@ const AddServices = () => {
             </div>
           </div>
           <div className="d-flex mt-4 justify-content-end">
-            <button className='btn btn-primary' type="submit">Save</button>
+            <button className='btn btn-brand' type="submit">Save</button>
           </div>
         </form>
       </div>

@@ -1,32 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import ServiceCard from '../../SharedComponents/ServiceCard/ServiceCard';
 
 const ManageServices = () => {
-  const [serviceList, setServiceList] = useState([])
+  const [services, setServices] = useState([]);
+
   useEffect(() => {
-    setServiceList([]);
-    const url = 'https://obscure-coast-14600.herokuapp.com/allService'
+    const url = 'https://obscure-coast-14600.herokuapp.com/allService';
     fetch(url)
       .then(res => res.json())
-      .then(data => setServiceList(data))
+      .then(data => setServices(data));
   }, [])
-
-  function deleteService(id) {
-    const url = `https://obscure-coast-14600.herokuapp.com/delete/${id}`;
-    fetch(url, {
-      method: "delete"
-    })
-      .then(res => res.json())
-      .then(ok => {
-        if (ok) {
-          alert('Deleted Successfully')
-        }
-      })
-  }
   return (
-    <div>
-      <h4 className='m-4'>Manage Services</h4>
-      <div className="pt-4 d-flex justify-content-center">
-
+    <div className="mt-5">
+      <div className="d-flex justify-content-center">
+        {
+          !services.length && <div class="spinner-border text-center text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        }
+      </div>
+      <div className="row">
+        {
+          services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+        }
       </div>
     </div>
   );

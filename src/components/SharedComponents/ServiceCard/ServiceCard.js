@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './ServiceCard.css'
+import './ServiceCard.css';
+import deleteIcon from '../../../images/delete.png'
+import { UserContext } from '../../../App';
 
 const ServiceCard = ({ service }) => {
+  const [redirectLocation, setRedirectLocation] = useState('');
   const location = useLocation()
   console.log(location);
   const { serviceTitle, description, price, imageURL, _id, status } = service;
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+  useEffect(() => {
+    fetch('https://obscure-coast-14600.herokuapp.com/admin?email=' + loggedInUser.email)
+      .then(res => res.json())
+      .then(data => {
+        setIsAdmin(data)
+        if (data) {
+          setRedirectLocation('/dashboard/manage-services')
+        } else {
+          setRedirectLocation(`/dashboard/place-order/${_id}`)
+        }
+      });
+  }, [loggedInUser.email])
+
+  const handleClick = () => {
+    fetch(`https://obscure-coast-14600.herokuapp.com/delete/${_id}`, {
+      method: "delete"
+    })
+      .then(res => res.json())
+      .then(ok => console.log('ok'))
+  }
   return (
-    <div className='col-md-4 col-12'>
+    <div className='col-md-4 col-12 my-4'>
       <div className="card service-card">
         <div className="card-image">
           <img src={imageURL} alt="" className="img-fluid" />
@@ -23,8 +49,14 @@ const ServiceCard = ({ service }) => {
           </div>
           <h6>{serviceTitle}</h6>
         </div>
+        <div>
+          {
+            location.pathname === "/dashboard/manage-services" ? <button className="btn btn-brand mx-4 mb-4" onClick={handleClick}>
+              <img src={deleteIcon} alt="" className="img-fluid icon me-1" />Delete Item</button> : null
+          }
+        </div>
         {
-          location.pathname === "/" || location.pathname === "/home" ? <Link to={'/dashboard/place-order/' + _id}>
+          location.pathname === "/" || location.pathname === "/home" ? <Link to={redirectLocation}>
             <div className="service-details p-4">
               <div className="service-details-header mb-3">
                 <div className="d-flex">

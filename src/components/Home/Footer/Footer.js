@@ -10,7 +10,7 @@ const Footer = () => {
     <div className='footer text-white'>
       <div className="container">
         <div className="row mt-5">
-          <div className="col-md-3 contact">
+          <div className="col-md-3 my-3 contact">
             <div className="title mb-4">
               <h4>CONTACT US</h4>
             </div>
@@ -24,7 +24,7 @@ const Footer = () => {
               <p>Website <span className='brand-color'> http://www.carshire.com</span></p>
             </div>
           </div>
-          <div className="col-md-3 our-services">
+          <div className="col-md-3 my-3 our-services">
             <div className="title mb-4">
               <h4>OUR SERVICES</h4>
             </div>
@@ -36,7 +36,7 @@ const Footer = () => {
               <Link to='/' className='d-block p-0 mb-4 item-link nav-link'><FontAwesomeIcon className='brand-color' icon={faCheckCircle} /> <span> Test driving and speed test</span></Link>
             </div>
           </div>
-          <div className="col-md-3 our-support">
+          <div className="col-md-3 my-3 our-support">
             <div className="title mb-4">
               <h4>OUR SUPPORT</h4>
             </div>
@@ -48,7 +48,7 @@ const Footer = () => {
               <Link to='/' className='d-block p-0 mb-4 item-link nav-link'><FontAwesomeIcon className='brand-color' icon={faCheckCircle} /> <span> Help & Support Center</span></Link>
             </div>
           </div>
-          <div className="col-md-3 contact">
+          <div className="col-md-3 my-3 contact">
             <div className="title mb-4">
               <h4>QUICK CONTACT</h4>
             </div>
@@ -73,10 +73,10 @@ const Footer = () => {
         <div className="container">
           <div className="pt-3 d-flex justify-content-between">
             <div className="copyright-text">
-              <p>Copyright {(new Date()).getFullYear()} by Carshire | All Rights Reserved</p>
+              <small>Copyright {(new Date()).getFullYear()} by Carshire | All Rights Reserved</small>
             </div>
-            <div>
-              <ul className="social-media list-inline">
+            <div className='social-media'>
+              <ul className="list-inline">
                 <li className="list-inline-item icon-item"><a href="//facebook.com"><FontAwesomeIcon className="social-icon" icon={faFacebookF} /></a></li>
                 <li className="list-inline-item icon-item"><a href="//google.com"><FontAwesomeIcon className="social-icon" icon={faGooglePlusG} /></a></li>
                 <li className="list-inline-item icon-item"><a href="//instagram.com"><FontAwesomeIcon className="social-icon" icon={faInstagram} /></a></li>

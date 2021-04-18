@@ -37,3 +37,12 @@ section {
 .brand-color {
   color: #fb4848;
 }
+.btn-brand {
+  border: 1px solid #fb4848;
+  background-color: #fb4848;
+  color: white;
+}
+.btn-brand:hover {
+  background-color: white;
+  color: #fb4848;
+}

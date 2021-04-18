@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../App';
 import logo from '../../../images/logo.png';
@@ -7,11 +7,23 @@ import './TopBar.css'
 const TopBar = () => {
   const location = useLocation()
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  const [isAdmin, setIsAdmin] = useState(false)
+  useEffect(() => {
+    fetch('https://obscure-coast-14600.herokuapp.com/admin?email=' + loggedInUser.email)
+      .then(res => res.json())
+      .then(data => setIsAdmin(data));
+  }, [loggedInUser])
   return (
     <nav class="topBar navbar navbar-expand-lg dark-bg">
       <div class="container">
         <ul class="navbar-nav d-flex justify-content-between">
           <li className="nav-item me-5">
+            {
+              location.pathname === '/dashboard' && <Link className="nav-link mt-1 page-title" to="/dashboard/order-list">
+                {
+                  isAdmin ? <b>Order List</b> : <b>Booking List</b>}
+              </Link>
+            }
             {
               location.pathname === '/dashboard/order-list' && <Link className="nav-link mt-1 page-title" to="/dashboard/order-list"><b>Order List</b></Link>
             }

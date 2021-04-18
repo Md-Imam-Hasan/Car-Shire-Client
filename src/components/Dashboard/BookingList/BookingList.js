@@ -14,6 +14,13 @@ const BookingList = () => {
   }, [])
   return (
     <div className="mt-5">
+      <div className="d-flex justify-content-center">
+        {
+          !bookingList.length && <div class="spinner-border text-center text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        }
+      </div>
       <div className="row">
         {
           bookingList.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)

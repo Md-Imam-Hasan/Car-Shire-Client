@@ -30,7 +30,7 @@ const MakeAdmin = () => {
             </div>
           </div>
           <div className="mt-4 ">
-            <button className='btn btn-primary' type="submit">Add</button>
+            <button className='btn btn-brand' type="submit">Add</button>
           </div>
         </form>
       </div>

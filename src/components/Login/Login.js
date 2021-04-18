@@ -25,8 +25,8 @@ const Login = () => {
 
   return (
     <div className="login">
-      <div className='d-flex justify-content-center mt-5 pt-5'>
-        <div className='text-center card p-5'>
+      <div className='d-flex justify-content-center '>
+        <div className='text-center login-card card p-5'>
           <div className="d-flex justify-content-center my-4">
             <img src={logo} alt="" className="login-logo " />
           </div>

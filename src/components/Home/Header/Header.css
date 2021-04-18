@@ -1,6 +1,6 @@
 .header {
   margin-bottom: 60px;
-  height: 550px;
+  height: 520px;
   background: linear-gradient(
       to left,
       rgba(0, 0, 0, 0.8),
@@ -21,7 +21,7 @@
   animation-delay: 1s;
 }
 .header .h1 {
-  font-size: 50px;
+  font-size: 55px;
   animation-delay: 1s;
 }
 .header .h2 {
@@ -45,6 +45,9 @@
 .header .h2 .span {
   animation-delay: 1.5s;
 }
+.moto {
+  margin-top: 120px;
+}
 @keyframes text_reveal {
   100% {
     color: white;
@@ -64,5 +67,16 @@
   100% {
     width: 0;
     left: 100%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .h1 {
+    font-size: 27px !important;
+  }
+  .h2 {
+    font-size: 22px !important;
+  }
+  .moto {
+    margin-top: 140px;
   }
 }

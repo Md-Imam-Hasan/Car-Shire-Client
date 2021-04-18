@@ -1,16 +1,16 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { UserContext } from '../../../App';
 
 const Review = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const [imageURL, setImageURL] = useState(null)
   const onSubmit = data => {
     const newReview = {
       name: data.name,
       discription: data.discription,
       rate: data.rate,
-      image: imageURL
+      image: loggedInUser.photoURL
     }
     console.log(newReview);
     const url = `https://obscure-coast-14600.herokuapp.com/addReview`;
@@ -27,30 +27,17 @@ const Review = () => {
       })
   };
 
-  const handleImageUpload = e => {
-    const imageData = new FormData();
-    imageData.set('key', 'b3ce459487a7921c3a173fc17b867445');
-    imageData.append('image', e.target.files[0])
-
-    axios.post('https://api.imgbb.com/1/upload', imageData)
-      .then(function (response) {
-        setImageURL(response.data.data.display_url);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
   return (
     <div className="m-4 pt-4">
       <form className="mx-5 pe-3" onSubmit={handleSubmit(onSubmit)}>
         <div className="row g-4">
           <div className="col-sm-6 col-12">
-            <label className='form-label' htmlFor="serviceTitle"><b>Service Title</b></label>
-            <input type="text" className='form-control' placeholder='Enter Service Title' {...register("name", { required: true })} />
-            {errors.name && <small className='text-danger'>Service Title is required</small>}
+            <label className='form-label' htmlFor="name"><b>Your Name</b></label>
+            <input type="text" className='form-control' placeholder='Enter Your Name' {...register("name", { required: true })} />
+            {errors.name && <small className='text-danger'>Name is required</small>}
           </div>
           <div className="col-auto">
-            <label className="visually-hidden" for="autoSizingSelect">Preference</label>
+            <label className='form-label' htmlFor="rate"><b>Rate us</b></label>
             <select className="form-select" {...register("rate", { required: true })} defaultValue="5" id="autoSizingSelect">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -58,23 +45,16 @@ const Review = () => {
               <option value="4">4</option>
               <option value="5">5</option>
             </select>
-            {errors.rate && <small className='text-danger'>Service Title is required</small>}
+            {errors.rate && <small className='text-danger'>Please rate us</small>}
           </div>
           <div className="col-sm-6 col-12">
-            <label className='form-label' htmlFor="description"><b>Description</b></label>
+            <label className='form-label' htmlFor="discription"><b>Discription</b></label>
             <textarea type="text" className='form-control' placeholder='Write Description' {...register("discription", { required: true })} cols="20" rows="5"></textarea>
             {errors.discription && <small className='text-danger'>Description is required</small>}
           </div>
-          <div className="col-sm-6 col-12">
-            <label className='form-label d-block'><b>Add a Photo</b></label>
-            <button type='button' className='btn btn-outline-primary' onClick={() => document.getElementById('image-upload').click()}>
-              Upload Photo
-              </button>
-            <input type="file" id='image-upload' className='form-control' hidden onChange={handleImageUpload} />
-          </div>
         </div>
         <div className="d-flex mt-4 justify-content-end">
-          <button className='btn btn-primary' type="submit">Save</button>
+          <button className='btn btn-brand' type="submit">Submit</button>
         </div>
       </form>
     </div>

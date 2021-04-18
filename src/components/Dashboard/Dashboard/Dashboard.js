@@ -1,5 +1,5 @@
-import React from 'react';
-import './Admin.css'
+import React, { useContext, useEffect, useState } from 'react';
+import './Dashboard.css'
 import { Route, Switch } from 'react-router';
 import Sidebar from '../SideBar/SideBar';
 import AddServices from '../AddServices/AddServices';
@@ -9,8 +9,17 @@ import PlaceOrder from '../PlaceOrder/PlaceOrder';
 import Review from '../Review/Review';
 import BookingList from '../BookingList/BookingList';
 import OrderList from '../OrderList/OrderList';
+import ManageServices from '../ManageServices/ManageServices';
+import { UserContext } from '../../../App';
 
-const Admin = () => {
+const Dashboard = () => {
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  useEffect(() => {
+    fetch('https://obscure-coast-14600.herokuapp.com/admin?email=' + loggedInUser.email)
+      .then(res => res.json())
+      .then(data => setIsAdmin(data));
+  }, [loggedInUser])
   return (
     <div className='row admin'>
       <div className="col-sm-3 col-4 dark-bg p-0 text-light">
@@ -20,6 +29,11 @@ const Admin = () => {
         <TopBar></TopBar>
         <div className="container">
           <Switch>
+            <Route exact path='/dashboard/'>
+              {
+                isAdmin ? <OrderList /> : <BookingList />
+              }
+            </Route>
             <Route path='/dashboard/add-services'>
               <AddServices />
             </Route>
@@ -27,6 +41,9 @@ const Admin = () => {
               <MakeAdmin />
             </Route>
             <Route path='/dashboard/place-order/:id'>
+              <PlaceOrder />
+            </Route>
+            <Route exact path='/dashboard/place-order'>
               <PlaceOrder />
             </Route>
             <Route path='/dashboard/review'>
@@ -38,9 +55,9 @@ const Admin = () => {
             <Route path='/dashboard/order-list'>
               <OrderList />
             </Route>
-            {/* <Route path='/admin/manage-books'>
-              <ManageBooks></ManageBooks>
-            </Route> */}
+            <Route path='/dashboard/manage-services'>
+              <ManageServices />
+            </Route>
           </Switch>
         </div>
       </div>
@@ -48,4 +65,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Dashboard;

@@ -30,7 +30,7 @@ const NavBar = () => {
               </li>
             </ul>
             {!loggedInUser?.success ? <Link to='/login'>
-              <button className='btn btn-outline-danger ms-5'>Login</button>
+              <button className='btn btn-outline-danger ms-md-5'>Login</button>
             </Link> : <p className="mt-3 text-danger text-uppercase"><b>{loggedInUser.userName}</b></p>}
           </div>
         </div>
