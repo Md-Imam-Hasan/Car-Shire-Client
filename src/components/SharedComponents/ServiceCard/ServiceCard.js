@@ -9,14 +9,12 @@ const ServiceCard = ({ service }) => {
   const location = useLocation()
   console.log(location);
   const { serviceTitle, description, price, imageURL, _id, status } = service;
-  const [isAdmin, setIsAdmin] = useState(false)
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
     fetch('https://obscure-coast-14600.herokuapp.com/admin?email=' + loggedInUser.email)
       .then(res => res.json())
       .then(data => {
-        setIsAdmin(data)
         if (data) {
           setRedirectLocation('/dashboard/manage-services')
         } else {

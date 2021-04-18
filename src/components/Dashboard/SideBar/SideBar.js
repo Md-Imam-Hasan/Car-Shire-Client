@@ -12,8 +12,6 @@ import {
 import logo from '../../../images/logo.png';
 import { UserContext } from '../../../App';
 
-// <FontAwesomeIcon icon={faUserPlus} />
-
 const Sidebar = () => {
   const [isAdmin, setIsAdmin] = useState(false)
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);

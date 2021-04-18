@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Login.css';
 import GoogleIcon from '../../images/googleicon.png'
 import { handleGoogleSignIn, initializeFirebase } from './LoginManager';

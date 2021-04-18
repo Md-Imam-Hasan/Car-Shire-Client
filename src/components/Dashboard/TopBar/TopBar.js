@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import logo from '../../../images/logo.png';
 import './TopBar.css'
 
 const TopBar = () => {
